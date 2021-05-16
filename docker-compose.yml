@@ -1,0 +1,50 @@
+version: "3"
+services:
+  api1:
+    image: kiziltan_bulut/api
+    build:
+      context: ./api/
+      dockerfile: ./Dockerfile
+    restart: always
+    depends_on:
+      - mongodb
+  api2:
+    image: kiziltan_bulut/api
+    build:
+      context: ./api/
+      dockerfile: ./Dockerfile
+    restart: always
+    depends_on:
+      - mongodb
+  api3:
+    image: kiziltan_bulut/api
+    build:
+      context: ./api/
+      dockerfile: ./Dockerfile
+    restart: always
+    depends_on:
+      - mongodb
+  mongodb:
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: dbroot
+      MONGO_INITDB_ROOT_PASSWORD: 5UQVc59w78F4vjYz
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - /var/data:/data/db
+
+  nginx:
+    image: kiziltan_bulut/nginx
+    build:
+      context: ./nginx/
+      dockerfile: ./Dockerfile
+    restart: always
+    links:
+      - api1
+      - api2
+      - api3
+    ports:
+      - '3000:3000'
