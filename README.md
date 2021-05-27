@@ -49,11 +49,11 @@ $ npm run test
 ```
 
 ### CLOUD ARCHITECTURE DECISIONS
-* AWS Amplify: We use Amplify service to serve our frontend application. Becuase the client app just needs to distribute static files obtained from production build. And it provides a handy, secure and scalable way.
+* <b>AWS Amplify:</b> We use Amplify service to serve our frontend application. Becuase the client app just needs to distribute static files obtained from production build. And it provides a handy, secure and scalable way.
 
-* AWS EC2: The complete backend stack which was prepared with Docker-compose, is deployed to an AWS EC2 instance. We created the EC2 instance from a Docker integrated Amazon Machine Image with proper network configurations. However, the image did not have a Docker-compose tool out-of-box. So, we needed to set it up using CentOS compatible Docker-compose binaries. Also it was deployed on a Virtual Private Cloud subnet.
+* <b>AWS EC2:</b> The complete backend stack which was prepared with Docker-compose, is deployed to an AWS EC2 instance. We created the EC2 instance from a Docker integrated Amazon Machine Image with proper network configurations. However, the image did not have a Docker-compose tool out-of-box. So, we needed to set it up using CentOS compatible Docker-compose binaries. Also it was deployed on a Virtual Private Cloud subnet.
 
-* AWS REST API Gateway: We used API Gateway service to ensure RESTful communications between
+* <b>AWS REST API Gateway:</b> We used API Gateway service to ensure RESTful communications between
 our clients and the backend. By that way, any of the users cannot know the real IP address of the AWS
 EC2 instance (backend) and it is not possible to send request into Docker containers directly from the
 user’s browser.
