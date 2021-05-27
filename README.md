@@ -1,17 +1,37 @@
-## STEP BY STEP INSTRUCTIONS TO RUN THE APP ON LOCAL ENVIRONMENT // TODO ::
+### STEP BY STEP INSTRUCTIONS TO RUN THE APP ON LOCAL ENVIRONMENT
 
-* The instructions assume port:3000 and port:8080 are free to use on localhost.
-1) open new terminal
-2) git clone
-3) cd project_root_directory/
-4) docker-compose up
-5) open new terminal in project_root_directory
-6) cd client/
-7) npm install
-8) npm run serve
-9) go http://localhost:8080/ in browser
+```bash
+: '
+Prerequisites:
+✓ Node.js & NPM
+✓ Docker
+✓ Docker Compose
+✓ No running services on ports 3000 and 8080 of local machine.
+'
+# 1) Open a new terminal screen in desired folder.
 
-## INSTRUCTIONS TO TEST THE API WITH Unit-test methodology
+# 2) Pull the repository using Git clone:
+$ git clone https://github.com/cmpe328-tpa-kiziltan-bulut/cmpe328_tpa_kiziltan_bulut.git
+
+# 3) Go into the project’s root directory:
+$ cd cmpe328_tpa_kiziltan_bulut/
+
+# 4) Run the backend services using Docker Compose:
+$ docker-compose up
+
+# 5) Open a new terminal screen in the project’s root directory.
+
+# 6) Go into the client folder:
+$ cd client/
+
+# 7) Use NPM to install the frontend app’s dependencies:
+$ npm install
+
+# 8) Run the client app using predefined NPM script:
+$ npm run serve
+```
+
+### INSTRUCTIONS TO TEST THE API WITH Unit-test methodology
 ```bash
 # 1) Open a new terminal screen in desired folder.
 
@@ -28,6 +48,6 @@ $ npm install
 $ npm run test
 ```
 
-## CLOUD ARCHITECTURE DECISIONS
+### CLOUD ARCHITECTURE DECISIONS
 
 * You can check the PDF documentation of the project for more information. // TODO ::
