@@ -18,7 +18,7 @@ module.exports = {
 
             try {
                 const content = JSON.parse(files)['content']
-                let clearedContent = await content.replace(/(\r\n|\n|\r|['"`\-\\=:;()\[\]*\/?!^&+{}]|[0-9])/gm, " ").trim().toLowerCase();
+                let clearedContent = await content.replace(/(\r\n|\n|\r|['" `\-\\=:;,()\[\]*\/?!^&+{}]|[0-9])/gm, " ").trim().toLowerCase();
 		let muchMoreClearedContent = await stopwords.removeStopwords(clearedContent.split(' '));
 
                 await muchMoreClearedContent.map(word => {
