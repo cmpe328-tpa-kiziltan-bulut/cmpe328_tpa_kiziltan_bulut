@@ -16,8 +16,8 @@ NODE_ENV = process.env.NODE_ENV || "test";
 const app = express();
 
 app.use(logger('common')); // Logging middleware
+app.use(express.urlencoded({extended: true, limit: '50mb'})); // Use HTTP request/response bodyparser middleware
 app.use(express.json()); // Use JSON parse middleware
-app.use(express.urlencoded({extended: true})); // Use HTTP request/response bodyparser middleware
 app.use(cookieParser()); // Use cookie parser middleware
 
 if (DB_URI === undefined) {
@@ -65,13 +65,14 @@ app.use((req, res, next) => {
  * Custom General Error-Handler Middleware
  * */
 app.use((errorCode, req, res, next) => {
+    let statusCode = errorCode.code || 500;
     if (errorCode.message === undefined) {
-        res.status(errorCode.code).json({
-            "z-status": errorCode.code
+        res.status(statusCode).json({
+            "z-status": statusCode
         })
     } else {
-        res.status(errorCode.code).json({
-            "z-status": errorCode.code,
+        res.status(statusCode).json({
+            "z-status": statusCode,
             "z-status-msg": errorCode.message
         })
     }
