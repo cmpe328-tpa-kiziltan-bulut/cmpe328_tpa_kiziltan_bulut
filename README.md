@@ -1,7 +1,11 @@
 
 ### # CLOUD ARCHITECTURE DECISIONS
-<b>✓ URL of deployed frontend app: https://cmpe328tpa.d3mhhfv7ldo1qn.amplifyapp.com/</b><br>
-<b>✓ Base URL of deployed public API: https://z763bh8bk7.execute-api.eu-central-1.amazonaws.com/v5/</b>
+<b>✓ URL of deployed frontend app: https://cmpe328tpa.d3mhhfv7ldo1qn.amplifyapp.com/</b><br><br>
+<b>✓ Base URL of deployed public API: https://z763bh8bk7.execute-api.eu-central-1.amazonaws.com/v5</b><br>
+<b>✓ Login endpoint:</b> {BASE_URL}/auth/login<br>
+<b>✓ Signup endpoint:</b> {BASE_URL}/auth/signup<br>
+<b>✓ Auth-check endpoint:</b> {BASE_URL}/auth/check<br>
+<b>✓ Analyze endpoint:</b> {BASE_URL}/analyze
 
 * <b>AWS Amplify:</b> We use Amplify service to serve our frontend application. Becuase the client app just needs to distribute static files obtained from production build. And it provides a handy, secure and scalable way.
 
