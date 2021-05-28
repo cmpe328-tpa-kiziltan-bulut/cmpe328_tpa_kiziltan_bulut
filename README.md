@@ -1,3 +1,17 @@
+
+### # CLOUD ARCHITECTURE DECISIONS
+<b>✓ URL of deployed frontend app: https://cmpe328tpa.d3mhhfv7ldo1qn.amplifyapp.com/</b><br>
+<b>✓ Base URL of deployed public API: https://z763bh8bk7.execute-api.eu-central-1.amazonaws.com/v5/</b>
+
+* <b>AWS Amplify:</b> We use Amplify service to serve our frontend application. Becuase the client app just needs to distribute static files obtained from production build. And it provides a handy, secure and scalable way.
+
+* <b>AWS EC2:</b> The complete backend stack which was prepared with Docker-compose, is deployed to an AWS EC2 instance. We created the EC2 instance from a Docker integrated Amazon Machine Image with proper network configurations. However, the image did not have a Docker-compose tool out-of-box. So, we needed to set it up using CentOS compatible Docker-compose binaries. Also it was deployed on a Virtual Private Cloud subnet.
+
+* <b>AWS REST API Gateway:</b> We used API Gateway service to ensure RESTful communications between
+our clients and the backend. By that way, any of the users cannot know the real IP address of the AWS
+EC2 instance (backend) and it is not possible to send request into Docker containers directly from the
+user’s browser.
+
 ### # STEP BY STEP INSTRUCTIONS TO RUN THE APP ON LOCAL ENVIRONMENT
 
 ```bash
@@ -48,13 +62,3 @@ $ npm install
 # 5) Run the test script using NPM:
 $ npm run test
 ```
-
-### # CLOUD ARCHITECTURE DECISIONS
-* <b>AWS Amplify:</b> We use Amplify service to serve our frontend application. Becuase the client app just needs to distribute static files obtained from production build. And it provides a handy, secure and scalable way.
-
-* <b>AWS EC2:</b> The complete backend stack which was prepared with Docker-compose, is deployed to an AWS EC2 instance. We created the EC2 instance from a Docker integrated Amazon Machine Image with proper network configurations. However, the image did not have a Docker-compose tool out-of-box. So, we needed to set it up using CentOS compatible Docker-compose binaries. Also it was deployed on a Virtual Private Cloud subnet.
-
-* <b>AWS REST API Gateway:</b> We used API Gateway service to ensure RESTful communications between
-our clients and the backend. By that way, any of the users cannot know the real IP address of the AWS
-EC2 instance (backend) and it is not possible to send request into Docker containers directly from the
-user’s browser.
