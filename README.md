@@ -1,4 +1,4 @@
-### STEP BY STEP INSTRUCTIONS TO RUN THE APP ON LOCAL ENVIRONMENT
+### # STEP BY STEP INSTRUCTIONS TO RUN THE APP ON LOCAL ENVIRONMENT
 
 ```bash
 : '
@@ -30,8 +30,9 @@ $ npm install
 # 8) Run the client app using predefined NPM script:
 $ npm run serve
 ```
+* ##### Visit "http://localhost:8080/", after successful setup of Docker containers and Vue app
 
-### INSTRUCTIONS TO TEST THE API WITH Unit-test methodology
+### # INSTRUCTIONS TO TEST THE API WITH Unit-test methodology
 ```bash
 # 1) Open a new terminal screen in desired folder.
 
@@ -48,7 +49,7 @@ $ npm install
 $ npm run test
 ```
 
-### CLOUD ARCHITECTURE DECISIONS
+### # CLOUD ARCHITECTURE DECISIONS
 * <b>AWS Amplify:</b> We use Amplify service to serve our frontend application. Becuase the client app just needs to distribute static files obtained from production build. And it provides a handy, secure and scalable way.
 
 * <b>AWS EC2:</b> The complete backend stack which was prepared with Docker-compose, is deployed to an AWS EC2 instance. We created the EC2 instance from a Docker integrated Amazon Machine Image with proper network configurations. However, the image did not have a Docker-compose tool out-of-box. So, we needed to set it up using CentOS compatible Docker-compose binaries. Also it was deployed on a Virtual Private Cloud subnet.
